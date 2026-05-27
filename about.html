@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании | ПластТех</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://static.vecteezy.com/system/resources/previews/039/350/257/non_2x/panoramic-industrial-silhouette-oil-industry-factory-buildings-refinery-complex-with-pipes-and-tanks-landscape-background-illustration-vector.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .page-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .values-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        .values-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .value-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        .value-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .value-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        .value-card p {
+            color: #666;
+        }
+        .certificates {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .certs-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .cert-item {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #3498db;
+        }
+        .cert-item i {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+        .cert-item span {
+            display: block;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        @media (max-width: 768px) {
+            .about-content { grid-template-columns: 1fr; }
+            .page-hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <div class="logo">ПластТех</div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О компании</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="technologies.html">Технологии</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="mobile-menu">
+        <button class="mobile-menu-close">✕</button>
+        <div class="mobile-logo">ПластТех</div>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="about.html">О компании</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="technologies.html">Технологии</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+        </ul>
+    </div>
+
+    <div class="page-hero">
+        <h1>О компании ПластТех</h1>
+        <p>Надёжность и качество с 2014 года</p>
+    </div>
+
+    <div class="about-content">
+        <div class="about-text">
+            <h3>Лидер в производстве пластиковых компонентов</h3>
+            <p>Компания основана в 2014 году группой инженеров-технологов. За 10 лет мы выросли из небольшой мастерской в современное производство с парком из 15 термопластавтоматов и собственным инструментальным цехом.</p>
+            <p>Мы специализируемся на литье под давлением, проектировании пресс-форм и выпуске серийных деталей для автомобилестроения, медицинской техники, электроники и товаров народного потребления.</p>
+            <p>Наша миссия — предлагать клиентам оптимальные технологические решения, сокращая время выхода продукта на рынок без потери качества.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://static.tildacdn.com/tild6332-3939-4565-b330-383139363438/wtryskarki_wanaty.jpg" alt="Наше производство">
+        </div>
+    </div>
+
+    <div class="values-section">
+        <h2 class="section-title">Наши ценности</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-handshake" style="color: #3498db;"></i>
+                <h3>Честность</h3>
+                <p>Прозрачные условия сотрудничества, фиксированные цены</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-flask" style="color: #27ae60;"></i>
+                <h3>Инновации</h3>
+                <p>Внедрение новых материалов и технологий литья</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-clock" style="color: #e67e22;"></i>
+                <h3>Скорость</h3>
+                <p>Оперативное реагирование на запросы и сокращение сроков</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-award" style="color: #e74c3c;"></i>
+                <h3>Качество</h3>
+                <p>Контроль на каждом этапе, сертификация ISO 9001:2015</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="certificates">
+        <h2 class="section-title">Сертификаты и лицензии</h2>
+        <div class="certs-grid">
+            <div class="cert-item"><i class="fas fa-certificate"></i><span>ISO 9001:2015</span></div>
+            <div class="cert-item"><i class="fas fa-file-contract"></i><span>Сертификат ТР ТС</span></div>
+            <div class="cert-item"><i class="fas fa-microscope"></i><span>Лицензия на мед.изделия</span></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>ПластТех</h3>
+            <p>Производство пластиковых деталей</p>
+            <p>ООО "ПластТех</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
