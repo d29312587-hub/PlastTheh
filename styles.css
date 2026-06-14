@@ -52,12 +52,8 @@ header {
     text-decoration: none;
     font-weight: 500;
     padding: 8px 12px;
-    transition: color 0.2s ease, border-bottom 0.2s ease;
+    transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
-}
-.nav-menu a:hover {
-    color: #ffaa33;
-    border-bottom-color: #ffaa33;
 }
 
 .cta-button {
@@ -172,6 +168,7 @@ footer {
     display: block;
     padding: 10px;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 .mobile-menu a:hover {
     color: #f39c12;
@@ -361,14 +358,8 @@ footer {
     font-size: 16px;
 }
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- КРАСИВОЕ УВЕДОМЛЕНИЕ ОБ УСПЕХЕ --- */
@@ -428,6 +419,168 @@ footer {
     transform: scale(1.05);
 }
 
+/* --- МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ --- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 10001;
+    justify-content: center;
+    align-items: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    background: #2c3e50;
+    color: white;
+    max-width: 450px;
+    width: 90%;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+.modal-close:hover {
+    color: #e74c3c;
+}
+.auth-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4a6a8b;
+}
+.auth-tab {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #bdc3c7;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+.auth-tab.active {
+    color: #e74c3c;
+    border-bottom-color: #e74c3c;
+}
+.auth-form {
+    display: none;
+}
+.auth-form.active {
+    display: block;
+}
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: #34495e;
+    border: 1px solid #4a6a8b;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.auth-form input:focus {
+    outline: none;
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231,76,60,0.5);
+}
+.auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+.auth-form button:hover {
+    background: #c0392b;
+}
+.auth-error {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* --- СТИЛИ ДЛЯ ЛИЧНОГО КАБИНЕТА --- */
+.requests-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.requests-table th,
+.requests-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+.requests-table th {
+    background: #2c3e50;
+    color: white;
+    font-weight: 600;
+}
+.requests-table tr:hover {
+    background: #f5f5f5;
+}
+.logout-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 30px;
+    width: auto;
+    display: inline-block;
+}
+.logout-btn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+.empty-message {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+    font-size: 1.1rem;
+}
+
 /* Cookie плашка */
 .cookie-consent {
     position: fixed;
@@ -474,6 +627,71 @@ footer {
     background: #c0392b;
 }
 
+/* Подсказки под полями email */
+.field-hint {
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    transition: all 0.2s;
+}
+
+/* ===== ВЫДЕЛЯЮЩАЯСЯ КНОПКА ВХОД / РЕГИСТРАЦИЯ ===== */
+/* Десктопная версия */
+.nav-menu a#authBtn {
+    background: #e74c3c !important;
+    color: white !important;
+    border-radius: 30px !important;
+    padding: 8px 20px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4) !important;
+    border: none !important;
+}
+
+.nav-menu a#authBtn:hover {
+    background: #c0392b !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6) !important;
+    border-bottom: none !important;
+}
+
+/* Мобильная версия */
+#mobileAuthBtn {
+    background: #e74c3c !important;
+    color: white !important;
+    border-radius: 30px !important;
+    padding: 10px 20px !important;
+    margin-top: 10px !important;
+    display: block !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4) !important;
+}
+
+#mobileAuthBtn:hover {
+    background: #c0392b !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6) !important;
+}
+
+/* ===== ЖЁЛТОЕ СВЕЧЕНИЕ ДЛЯ ОСТАЛЬНЫХ ПУНКТОВ МЕНЮ ===== */
+.nav-menu li:not(:last-child) a {
+    transition: all 0.3s ease !important;
+}
+
+.nav-menu li:not(:last-child) a:hover {
+    color: #ffaa33 !important;
+    text-shadow: 0 0 10px rgba(255, 170, 51, 0.8), 0 0 5px rgba(255, 170, 51, 0.5) !important;
+    border-bottom-color: #ffaa33 !important;
+}
+
+/* Для мобильного меню */
+.mobile-menu ul li:not(:last-child) a:hover {
+    color: #ffaa33 !important;
+    text-shadow: 0 0 10px rgba(255, 170, 51, 0.8) !important;
+    background: rgba(255, 170, 51, 0.15) !important;
+}
+
 @media (max-width: 600px) {
     .cookie-consent {
         left: 16px;
@@ -501,5 +719,9 @@ footer {
     }
     .contacts-container {
         grid-template-columns: 1fr;
+    }
+    .requests-table th, .requests-table td {
+        padding: 10px 12px;
+        font-size: 13px;
     }
 }
